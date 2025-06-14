@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Akarsha Ravindran | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: #f0f0f0;
+    background: radial-gradient(circle at top left, #3a1c71, #d76d77, #ffaf7b);
+    background-size: 300% 300%;
+    animation: bgMove 20s ease infinite;
+    overflow-x: hidden;
+  }
+
+  @keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  nav {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.1);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  nav h1 {
+    font-size: 1.8rem;
+    color: #fff;
+    text-shadow: 0 0 10px #ffaf7b;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+  }
+
+  nav ul li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #ffaf7b;
+    transition: width 0.3s ease;
+    width: 0;
+  }
+
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+
+  header {
+    text-align: center;
+    padding: 100px 20px;
+  }
+
+  header h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 15px #d76d77;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    color: #eee;
+  }
+
+  section {
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    margin: 40px 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  section h2 {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 10px #3a1c71;
+    margin-bottom: 20px;
+  }
+.about-img-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  border: 3px solid #ffaf7b;
+  box-shadow: 0 0 30px #ffaf7b, 0 0 60px #d76d77;
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-img:hover {
+  transform: rotate(5deg) scale(1.1);
+  box-shadow: 0 0 50px #ffaf7b, 0 0 80px #d76d77;
+}
+
+.about-img-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  animation: rotateBorder 10s linear infinite;
+}
+
+@keyframes rotateBorder {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+  .skills-container, .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .skill, .project {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    padding: 30px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .skill:hover, .project:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 0 20px #ffaf7b;
+  }
+
+  .project {
+    border-radius: 20px;
+    width: 250px;
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .project h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .project p {
+    font-size: 0.9rem;
+  }
+
+  .project a {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 8px 16px;
+    background: #ffaf7b;
+    color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+
+  .project a:hover {
+    background: #d76d77;
+    color: #fff;
+  }
+
+  .download-btn {
+    margin-top: 15px;
+    background: #ffaf7b;
+    color: #000;
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 0 15px #ffaf7b;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .download-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #ffaf7b;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: #fff;
+    font-size: 0.9rem;
+  }
+
+  @media(max-width:768px){
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .skill, .project {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>Akarsha</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Akarsha Ravindran</h1>
+    <p>BTech Information Technology Student</p>
+  </header>
+
+ <section id="about">
+  <h2>About Me</h2>
+  <div class="about-img-wrapper">
+    <img src="my_photo.jpg" alt="Profile Photo" class="profile-img">
+  </div>
+  <div class="about-text">
+    <p> Hi, I’m <strong>Akarsha</strong> — a curious mind and aspiring developer passionate about turning ideas into interactive digital experiences.</p>
+    <p> Currently pursuing <strong>BTech in Information Technology</strong>, I love exploring new technologies and crafting projects that blend functionality with beautiful design.</p>
+    <p> Always eager to learn, collaborate, and innovate. Let’s build something amazing together!</p>
+  </div>
+</section>
+
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill">C</div>
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Python</div>
+      <div class="skill">Java</div>
+      <div class="skill">MySQL</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project">
+        <h3>EMOVISION</h3>
+        <p>Facial emotion detection system using deep learning for real-time analysis.</p>
+        <a href="project.jpg" target="_blank">View</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <a href="Resume.pdf" class="download-btn">📄 Download My Resume</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 akarsharavindran2004@gmail.com</p>
+    <p>📱 +91 9037179403</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Akarsha Ravindran. All rights reserved.
+  </footer>
+
+</body>
+</html>
